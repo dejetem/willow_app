@@ -1,3 +1,8 @@
+# Running the Project
+1. Clone the repository.
+2. Start the backend server, `cd backend` and check the README.md file for how to start the server.
+3. Start the frontend server `cd frontend`  and check the README.md file for how to start the server.
+
 # full-stack-assignment-202410
 Assignment for candidates applying for the job of full stack developer at Willow in October 2024.
 
