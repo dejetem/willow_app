@@ -10,6 +10,9 @@ interface Idea {
   createdAt: string;
   updatedAt: string;
 }
+interface ApiResponse {
+  data: Idea[];
+}
 
 const App: React.FC = () => {
   const [ideas, setIdeas] = useState<Idea[]>([]);
@@ -19,15 +22,22 @@ const App: React.FC = () => {
 
   
 
-  // Function to fetch ideas and append them to the existing list
-  const loadIdeas = async (pageNumber: number) => {
-    const data = await fetchIdeas(pageNumber);
+   // Function to fetch ideas and append them to the existing list
+   const loadIdeas = async (pageNumber: number) => {
+    const data: ApiResponse = await fetchIdeas(pageNumber);
     if (data.data.length === 0) {
       setHasMore(false); // Stop fetching when no more ideas are available
     } else {
-      setIdeas((prevIdeas) => [...prevIdeas, ...data.data]);
+      setIdeas((prevIdeas) => {
+        // Create a Set of existing idea IDs
+        const existingIds = new Set(prevIdeas.map((idea: Idea) => idea.id));
+        // Filter out duplicates from the new data
+        const newIdeas = data.data.filter((idea: Idea) => !existingIds.has(idea.id));
+        return [...prevIdeas, ...newIdeas];
+      });
     }
   };
+
 
   // Function to refresh the list of ideas (reset to page 1)
   const refreshIdeas = async () => {

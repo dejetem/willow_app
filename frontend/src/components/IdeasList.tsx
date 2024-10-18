@@ -17,7 +17,7 @@ const IdeasList: React.FC<IdeasListProps> = ({ ideas }) => {
       <h1 className="text-2xl font-bold mb-4">Ideas</h1>
       <ul className="space-y-4">
         {ideas.map((idea, index) => (
-          <li key={`${idea.id}-${index}`} className="bg-white p-4 rounded shadow">
+          <li key={`${idea.id}`} className="bg-white p-4 rounded shadow">
             <p>{idea.content}</p>
             <small className="text-gray-500">Created at: {new Date(idea.createdAt).toLocaleString()}</small>
           </li>

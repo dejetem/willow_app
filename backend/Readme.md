@@ -38,7 +38,6 @@ Make sure that you have Docker installed on your machine before running this com
 - `migration:revert`: Reverts the last executed migration.
 
 ## Creating a new migration
-
 To create a new migration, run the following command:
 
 `npm run migration:create <migration-name>` for example: `npm run migration:create create_ideas_table`

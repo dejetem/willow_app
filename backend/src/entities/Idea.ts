@@ -5,7 +5,7 @@ export class Idea {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @Column()
+    @Column("text", { nullable: false }) 
     content!: string;
 
     @CreateDateColumn()
