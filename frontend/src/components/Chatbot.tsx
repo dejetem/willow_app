@@ -26,7 +26,7 @@ const Chatbot: React.FC = () => {
           placeholder="Ask the bot for idea..."
         />
         <button disabled={loading} type="submit" className="bg-[#235A91] text-white p-2 rounded mt-2">
-        {loading ? 'Loading...' : 'Ask Bot'}
+          {loading ? 'Loading...' : 'Ask Bot'}
         </button>
       </form>
       {response && <p className="mt-2 text-blue-500">{response}</p>}

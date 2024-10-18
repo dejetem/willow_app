@@ -35,7 +35,7 @@ const IdeaForm: React.FC<IdeaFormProps> = ({ refreshIdeas }) => {
         placeholder="Enter your idea"
       />
       <div className="flex justify-between">
-        <button disabled={loading || content.length <= 3} type="submit" className="bg-[#235A91] text-white p-2 rounded mt-2">
+        <button disabled={loading || content.length <= 3} type="submit" className="bg-[#235A91] text-white px-2 rounded mt-2">
           {loading ? 'Loading...' : 'Submit Idea'}
         </button>
         <ResetIdeas refreshIdeas={refreshIdeas} />
